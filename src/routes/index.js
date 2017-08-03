@@ -6,8 +6,6 @@ import Home from '../views/Home'
 import Detail from '../views/Detail'
 import F0F from  '../views/404'
 
-
-
 const routes = (
         <Router>
             <div>
