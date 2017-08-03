@@ -9,14 +9,14 @@ class PreviewList extends Component {
         articleList: PropTypes.arrayOf(PropTypes.object),
         loadArticles: PropTypes.func,
     }
-    
+
     componentDidMount() {
         // debugger
         this.props.loadArticles()
     }
 
     render() {
-        debugger
+        // debugger
         const { loading, error, articleList } = this.props
 
         if (error) {
@@ -41,8 +41,5 @@ class PreviewList extends Component {
     }
 }
 
-PreviewList.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.object),
-}
 
 export default PreviewList

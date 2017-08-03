@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import PreviewList from '../components/Home/PreviewList'
 import { actions } from './HomeRedux'
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
+// import { push } from 'react-router-redux'
 
 const Home = (props) => {
     const { loadArticles, articleList, push } = props
@@ -16,7 +16,7 @@ const Home = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('111', state)
+    // console.log('111', state)
     return {
         articleList: state.home.list.articleList,
     }
@@ -26,7 +26,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         // push,
         loadArticles: () => {
-            dispatch(actions.loadArticles)
+            dispatch({
+                type:'LOAD_ARTICLES_ERROR',
+            })
         }
     }
 }
