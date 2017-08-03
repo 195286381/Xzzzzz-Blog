@@ -1,9 +1,9 @@
-import { combineReducer } from 'redux'
+import { combineReducers } from 'redux'
 
 // 引入 reducer 以及 actionCreator
 import list, { loadArticles } from '../components/Home/PreviewListRedux'
 
-export default combineReducer({
+export default combineReducers({
     list,
 })
 
