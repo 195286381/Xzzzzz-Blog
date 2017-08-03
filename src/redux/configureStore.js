@@ -1,12 +1,9 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
-import reducers from './reducers'
+/**
+ * create by Xzzzzz in 03/08/2017
+ */
 
-const storeEnhancer = compose(
-applyMiddleware()
-)
-
-const configureStore = (initialState) => {
-    return createStore(reducers, initialState, storeEnhancer)
+if (process.env.NODE_ENV === 'production') { // 生成环境
+    module.exports = require('./configureStore.prod')
+} else { // 开发环境
+    module.exports = require('./configureStore.dev')
 }
-
-export default configureStore

@@ -9,6 +9,8 @@ const LOAD_ARTICLES_SUCCESS = "LOAD_ARTICLES_SUCCESS"
 const LOAD_ARTICLES_FALSE = "LOAD_ARTICLES_FALSE"
 
 export const loadArticles = () => {
+    // debugger 
+    // alert(1)
     return {
         types: [LOAD_ARTICLES, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_FALSE],
         url: 'api/articles.json',
@@ -16,6 +18,7 @@ export const loadArticles = () => {
 }
 
 export default (state=initialState, action) => {
+    debugger
     switch(action.type) {
         case LOAD_ARTICLES: {
             return {
@@ -30,6 +33,7 @@ export default (state=initialState, action) => {
                 ...state,
                 loading: false,
                 error: false,
+                articleList: action.payload,
             }
         }
 

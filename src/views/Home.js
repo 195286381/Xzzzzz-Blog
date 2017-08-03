@@ -16,6 +16,7 @@ const Home = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    console.log('111', state)
     return {
         articleList: state.home.list.articleList,
     }
@@ -23,8 +24,10 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        push,
-        actions: bindActionCreators(actions, dispatch),
+        // push,
+        loadArticles: () => {
+            dispatch(actions.loadArticles)
+        }
     }
 }
 
