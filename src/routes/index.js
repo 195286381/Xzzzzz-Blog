@@ -1,20 +1,23 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, IndexRoute } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 
 import Frame from '../layouts/Frame'
 import Home from '../views/Home'
 import Detail from '../views/Detail'
 import F0F from  '../views/404'
 
+const history = createHistory()
 const routes = (
-        <Router>
+        <ConnectedRouter history={history}>
             <div>
                 <Frame>
                     <Route exact path="/" component={Home} />
                     <Route path="/detail" component={Detail} />
                 </Frame>          
             </div>
-        </Router>
+        </ConnectedRouter>
 )
 
 export default routes
