@@ -3,28 +3,18 @@
  */
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import createFetchMiddleware, { applyFetchMiddleware } from 'redux-composable-fetch';
 import { routerReducer } from 'react-router-redux'
 import rootReducer from './reducers'
 import DevTools from './DevTools'
 
-const fetchMiddleware = createFetchMiddleware({
-  afterFetch({ action, result }) {
-    return result.json().then(data => {
-      return Promise.resolve({
-        action,
-        result: data,
-      });
-    });
-  },
-});
+
 
 const middlewares = []
 middlewares.push(thunkMiddleware)
-middlewares.push(fetchMiddleware)
 
+// debugger
 const storeEnhancer = compose(
-applyMiddleware(...middlewares),
+applyMiddleware(thunkMiddleware),
 DevTools.instrument()
 )
 

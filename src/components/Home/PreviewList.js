@@ -3,15 +3,15 @@ import Preview from './Preview'
 import PropTypes from 'prop-types'
 
 class PreviewList extends Component {
-    // static propTypes = {
-    //     loading: PropTypes.bool,
-    //     error: PropTypes.bool,
-    //     articleList: PropTypes.arrayOf(PropTypes.object),
-    //     loadArticles: PropTypes.any,
-    // }
+    static propTypes = {
+        loading: PropTypes.bool,
+        error: PropTypes.bool,
+        articleList: PropTypes.arrayOf(PropTypes.object),
+        loadArticles: PropTypes.any,
+    }
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.loadArticles()
     }
 
@@ -31,11 +31,12 @@ class PreviewList extends Component {
             )
         }
 
+        // debugger
         return (
             <div>
-                {articleList.map(item => (
+                 {articleList.map(item => (
                     <Preview {...item} key={item.id} />
-                ))}
+                ))} 
             </div>
         )
     }
