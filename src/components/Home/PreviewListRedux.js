@@ -17,10 +17,15 @@ export const loadArticles = () => {
     }
 }
 
+export const loadError = {
+    type: LOAD_ARTICLES_ERROR,
+}
+
 export default (state=initialState, action) => {
     // debugger
     switch(action.type) {
         case LOAD_ARTICLES: {
+            debugger
             return {
                 ...state,
                 loading: true,
@@ -29,6 +34,7 @@ export default (state=initialState, action) => {
         }
 
         case LOAD_ARTICLES_SUCCESS: {
+            debugger
             return {
                 ...state,
                 loading: false,
@@ -38,6 +44,7 @@ export default (state=initialState, action) => {
         }
 
         case LOAD_ARTICLES_ERROR: {
+            debugger
             return {
                 ...state,
                 loading: false,

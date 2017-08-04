@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 const Home = (props) => {
     const { loadArticles, articleList, push } = props
+    // debugger
     return (
         <div>
             <h1>Home</h1>
@@ -16,6 +17,7 @@ const Home = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    console.dir(state)
     // console.log('111', state)
     return {
         articleList: state.home.list.articleList,
@@ -24,11 +26,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        // push,
         loadArticles: () => {
-            dispatch({
-                type:'LOAD_ARTICLES_ERROR',
-            })
+            dispatch(actions.loadError)
         }
     }
 }

@@ -10,9 +10,9 @@ import rootReducer from './reducers'
 const fetchMiddleware = createFetchMiddleware()
 
 const middlewares = []
-middlewares.push(thunkMiddleware)
+// middlewares.push(thunkMiddleware)
 middlewares.push(routerMiddleware)
-middlewares.push(fetchMiddleware)
+// middlewares.push(fetchMiddleware)
 
 const storeEnhancer = compose(
     applyMiddleware(...middlewares),

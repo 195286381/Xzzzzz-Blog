@@ -4,7 +4,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import createFetchMiddleware, { applyFetchMiddleware } from 'redux-composable-fetch';
-import { routerReducer, routerMiddleware } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 import rootReducer from './reducers'
 import DevTools from './DevTools'
 
@@ -22,7 +22,6 @@ const fetchMiddleware = createFetchMiddleware({
 const middlewares = []
 middlewares.push(thunkMiddleware)
 middlewares.push(fetchMiddleware)
-middlewares.push(routerMiddleware)
 
 const storeEnhancer = compose(
 applyMiddleware(...middlewares),
