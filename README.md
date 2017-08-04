@@ -1,3 +1,5 @@
 ### just a blog. create by Xzzzzz
 
-基于 react + redux 构建 个人博客.
+  ```javascript
+    jsut a simple blog created by Xzzzz 
+  ```
